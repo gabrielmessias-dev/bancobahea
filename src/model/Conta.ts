@@ -57,7 +57,7 @@ export class Conta {
 
     public sacar(valor: number): boolean {
         if (this._saldo < valor) {
-            console.log("Saldo insuficiente");
+            console.log(colors.bg.black + colors.fg.blue + "Saldo insuficiente" + colors.reset);
             return false;
         } else {
             this._saldo -= valor;
