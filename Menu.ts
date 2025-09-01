@@ -32,7 +32,7 @@ export function main() {
 
     
     do {
-        console.log(colors.bg.black + colors.fg.blue + "*****************************************************");
+        console.log(colors.bg.black + colors.fg.blue + "\n*****************************************************");
         console.log("                                                     ");
         console.log(colors.bg.black + colors.fg.red + "                BANCO DO BAHEA                       ");
         console.log("                                                     ");
