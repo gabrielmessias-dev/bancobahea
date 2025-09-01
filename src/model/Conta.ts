@@ -1,3 +1,5 @@
+import { colors } from "../util/Colors";
+
 export class Conta {
     private _numero: number;
     private _agencia: number;
@@ -82,16 +84,18 @@ export class Conta {
                 break;
         }
 
-        
-        console.log("\n*************************************");
-        console.log("Dados da conta:");
-        console.log("*************************************");
-        console.log("Número da conta: " + this._numero);
-        console.log("Agência: " + this._agencia);
-        console.log("Tipo: " + this._tipo);
-        console.log("Titular: " + this._titular);
-        console.log("Saldo: " + this._saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
-        console.log("*************************************");
+        console.log(colors.bg.black + colors.fg.red + "\n*************************************" + colors.reset);
+        console.log(colors.bg.black + colors.fg.blue + "Dados da conta:" + colors.reset);
+        console.log(colors.bg.black + colors.fg.red + "*************************************" + colors.reset);
+
+        console.log(colors.bg.black + colors.fg.blue + "Número da conta: " + colors.fg.red + this._numero + colors.reset);
+        console.log(colors.bg.black + colors.fg.blue + "Agência: " + colors.fg.red + this._agencia + colors.reset);
+        console.log(colors.bg.black + colors.fg.blue + "Tipo: " + colors.fg.red + this._tipo + colors.reset);
+        console.log(colors.bg.black + colors.fg.blue + "Titular: " + colors.fg.red + this._titular + colors.reset);
+        console.log(colors.bg.black + colors.fg.blue + "Saldo: " + colors.fg.red + this._saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + colors.reset);
+
+        console.log(colors.bg.black + colors.fg.red + "*************************************" + colors.reset);
+
     }
 
     

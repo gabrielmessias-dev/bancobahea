@@ -1,4 +1,5 @@
 import { Conta } from "./Conta";
+import { colors } from "../util/Colors";
 
 export class ContaPoupanca extends Conta {
 
@@ -19,6 +20,7 @@ export class ContaPoupanca extends Conta {
 
     public visualizar(): void {
         super.visualizar();
-        console.log("Dia do Aniversário: " + this._aniversario);
+        console.log(colors.bg.black + colors.fg.blue + "Dia do Aniversário: " + colors.fg.red + this._aniversario + colors.reset);
+
     }
 }
