@@ -59,10 +59,9 @@ export class Conta {
         if (this._saldo < valor) {
             console.log(colors.bg.black + colors.fg.blue + "Saldo insuficiente" + colors.reset);
             return false;
-        } else {
+        } 
             this._saldo -= valor;
             return true;
-        }
     }
 
     public depositar(valor: number): void {

@@ -22,10 +22,9 @@ export class ContaCorrente extends Conta {
         if (this.saldo + this._limite < valor) {
             console.log("Saldo insuficiente");
             return false;
-        } else {
+        } 
             this.saldo -= valor;
             return true;
-        }
     }
     
     public visualizar(): void {
