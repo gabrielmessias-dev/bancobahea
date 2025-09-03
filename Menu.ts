@@ -2,27 +2,31 @@ import leia = require('readline-sync');
 import { colors } from './src/util/Colors';
 import { ContaCorrente } from './src/model/ContaCorrente';
 import { ContaPoupanca } from './src/model/ContaPoupanca';
+import { ContaController } from './src/controller/ContaController';
 
 export function main() {
 
-    let opcao: number;
+    let contas: ContaController = new ContaController();
+    
+    let opcao: number, numero: number, agencia: number, tipo: number, saldo: number, limite: number, aniversario: number
+    let titular: string;
     let continuar: boolean = true;
 
-    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
-    contacorrente.visualizar();
-    contacorrente.sacar(2000);
-    contacorrente.visualizar();
-    contacorrente.depositar(1000);
-    contacorrente.visualizar();
+    console.log("\nCriar contas\n")
+    let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
+    contas.cadastrar(cc1);
 
-    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
-    contapoupanca.visualizar();
-    contapoupanca.sacar(200);
-    contapoupanca.visualizar();
-    contapoupanca.depositar(1000);
-    contapoupanca.visualizar();
+    let cc2: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 124, 1, "Maria da Silva", 2000, 100.0);
+    contas.cadastrar(cc2);
 
-    
+    let cp1: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Mariana dos Santos", 4000, 12);
+    contas.cadastrar(cp1);
+
+    let cp2: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Juliana Ramos", 8000, 15);
+    contas.cadastrar(cp2);
+
+    contas.listarTodas();
+
     do {
         console.log(colors.bg.black + colors.fg.blue + "\n*****************************************************");
         console.log("                                                     ");
@@ -49,10 +53,37 @@ export function main() {
         switch (opcao) {
             case 1:
                 console.log(colors.fg.whitestrong, "\nCriar Conta", colors.reset);
+
+                console.log (colors.fg.whitestrong, "\nDigite o Numero da Agência: ", colors.reset);
+                agencia = leia.questionInt();
+
+                console.log (colors.fg.whitestrong, "\nDigite o nome do titular da Conta: ", colors.reset);
+                titular = leia.question();
+
+                console.log (colors.fg.whitestrong, "\nDigite o Tipo da Conta: ", colors.reset);
+                tipo = leia.questionInt();
+
+                console.log (colors.fg.whitestrong, "\nDigite o Saldo da Conta: ", colors.reset);
+                saldo = leia.questionInt();
+
+                    switch (tipo) {
+                        case 1:
+                            console.log (colors.fg.whitestrong, "\nDigite o Limite da Conta em R$: ", colors.reset);
+                            limite = leia.questionFloat();
+                            contas.cadastrar(new ContaCorrente(contas.gerarNumero(), agencia, tipo, titular, saldo, limite));
+                            break;
+                        
+                        case 2:
+                            console.log (colors.fg.whitestrong, "\nDigite o Aniversário da Conta: ", colors.reset);
+                            aniversario = leia.questionInt();
+                            contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), agencia, tipo, titular, saldo, aniversario));
+                            break;
+                    }
                 keyPress();
                 break;
             case 2:
                 console.log(colors.fg.whitestrong, "\nListar todas as Contas", colors.reset);
+                contas.listarTodas();
                 keyPress();
                 break;
             case 3:
