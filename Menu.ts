@@ -12,6 +12,8 @@ export function main() {
     let titular: string;
     let continuar: boolean = true;
 
+    const tiposContas = ["Conta Corrente", "Conta Poupanca"];
+
     console.log("\nCriar contas\n")
     let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
     contas.cadastrar(cc1);
@@ -88,14 +90,61 @@ export function main() {
                 break;
             case 3:
                 console.log(colors.fg.whitestrong, "\nConsultar dados da Conta - por número", colors.reset);
+
+                console.log (colors.fg.whitestrong, "\nDigite o Numero da Conta: ", colors.reset);
+                numero = leia.questionInt();
+
+                contas.procurarPorNumero(numero);
+
                 keyPress();
                 break;
             case 4:
                 console.log(colors.fg.whitestrong, "\nAtualizar dados da Conta", colors.reset);
+                console.log (colors.fg.whitestrong, "\nDigite o Numero da Conta: ", colors.reset);
+                numero = leia.questionInt();
+
+                let conta = contas.buscarNoArray(numero);
+
+                if (conta != null) {
+                    console.log (colors.fg.whitestrong, "\nDigite o Numero da Agência: ", colors.reset);
+                    agencia = leia.questionInt();
+
+                    console.log (colors.fg.whitestrong, "\nDigite o nome do titular da Conta: ", colors.reset);
+                    titular = leia.question();
+
+                    console.log (colors.fg.whitestrong, "\nDigite o Saldo da Conta: ", colors.reset);
+                    saldo = leia.questionFloat();
+
+                    tipo = conta.tipo;
+
+                    switch(tipo) {
+                        case 1:
+                            console.log (colors.fg.whitestrong, "\nDigite o Limite da Conta em R$: ", colors.reset);
+                            limite = leia.questionFloat();
+                            contas.atualizar(new ContaCorrente(numero, agencia, tipo, titular, saldo, limite));
+                            break;
+                        
+                        case 2:
+                            console.log (colors.fg.whitestrong, "\nDigite o Aniversário da Conta: ", colors.reset);
+                            aniversario = leia.questionInt();
+                            contas.atualizar(new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario));
+                            break;
+                    }
+                } else {
+
+                    console.log (colors.fg.whitestrong, `\nA conta numero ${numero} nao foi encontrada`, colors.reset);
+                }
+
                 keyPress();
                 break;
             case 5:
                 console.log(colors.fg.whitestrong, "\nApagar uma Conta", colors.reset);
+
+                console.log (colors.fg.whitestrong, "\nDigite o Numero da Conta: ", colors.reset);
+                numero = leia.questionInt();
+
+                contas.deletar(numero);
+
                 keyPress();
                 break;
             case 6:
