@@ -8,7 +8,7 @@ export function main() {
 
     let contas: ContaController = new ContaController();
     
-    let opcao: number, numero: number, agencia: number, tipo: number, saldo: number, limite: number, aniversario: number
+    let opcao: number, numero: number, agencia: number, tipo: number, saldo: number, limite: number, aniversario: number, numeroOrigem: number, numeroDestino: number, valorSaque: number, valorTransferencia: number, valorDeposito: number;
     let titular: string;
     let continuar: boolean = true;
 
@@ -149,14 +149,38 @@ export function main() {
                 break;
             case 6:
                 console.log(colors.fg.whitestrong, "\nSaque", colors.reset);
+                console.log(colors.fg.whitestrong, "\nDigite o Numero da Conta: ", colors.reset);
+                numero = leia.questionInt();
+
+                console.log(colors.fg.whitestrong, "\nDigite o valor do saque: ", colors.reset);
+                valorSaque = leia.questionFloat();
+
+                contas.sacar(numero, valorSaque);
                 keyPress();
                 break;
             case 7:
                 console.log(colors.fg.whitestrong, "\nDepósito", colors.reset);
+                console.log(colors.fg.whitestrong, "\nDigite o Numero da Conta: ", colors.reset);
+                numero = leia.questionInt();
+
+                console.log(colors.fg.whitestrong, "\nDigite o valor do depósito: ", colors.reset);
+                valorDeposito = leia.questionFloat();
+
+                contas.depositar(numero, valorDeposito);
                 keyPress();
                 break;
             case 8:
                 console.log(colors.fg.whitestrong, "\nTransferência entre Contas", colors.reset);
+                console.log(colors.fg.whitestrong, "\nDigite o Numero da Conta de Origem: ", colors.reset);
+                numeroOrigem = leia.questionInt();
+
+                console.log(colors.fg.whitestrong, "\nDigite o Numero da Conta de Destino: ", colors.reset);
+                numeroDestino = leia.questionInt();
+                        
+                console.log(colors.fg.whitestrong, "\nDigite o valor da transferência: ", colors.reset);
+                valorTransferencia = leia.questionFloat();
+
+                contas.transferir(numeroOrigem, numeroDestino, valorTransferencia);
                 keyPress();
                 break;
             case 9:
