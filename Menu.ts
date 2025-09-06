@@ -63,7 +63,7 @@ export function main() {
                 titular = leia.question();
 
                 console.log (colors.fg.whitestrong, "\nDigite o Tipo da Conta: ", colors.reset);
-                tipo = leia.questionInt();
+                tipo = leia.keyInSelect(tiposContas, '', { cancel: false } ) + 1;
 
                 console.log (colors.fg.whitestrong, "\nDigite o Saldo da Conta: ", colors.reset);
                 saldo = leia.questionInt();
