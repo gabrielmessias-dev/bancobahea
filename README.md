@@ -43,9 +43,6 @@ src/
 
 ---
 
-### 📸 Demonstração
-
-
 📚 Aprendizados
 Aplicação prática de POO com classes abstratas, herança e polimorfismo
 
@@ -73,7 +70,8 @@ npx ts-node Menu.ts
 ```
 📸 Demonstração
 
-![Demonstração do Banco do Bahea](https://github.com/gabrielmessias-dev/banco-do-bahea/raw/main/demoapp.png)
+![Demonstração do Banco do Bahea](demoapp.png)
+
 
 📚 Aprendizados
 
