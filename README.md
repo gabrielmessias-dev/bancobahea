@@ -43,22 +43,8 @@ src/
 
 ---
 
-## ▶️ Como executar o projeto
-```bash
-# Clone o repositório
-git clone https://github.com/gabrielmessias-dev/banco-do-bahea.git
+### 📸 Demonstração
 
-# Entre na pasta do projeto
-cd banco-do-bahea
-
-# Instale as dependências
-npm install
-
-# Execute o app
-npx ts-node Menu.ts
-
-📸 Demonstração
-(Adicione aqui uma imagem ou GIF mostrando o menu rodando no terminal, para dar mais impacto visual)
 
 📚 Aprendizados
 Aplicação prática de POO com classes abstratas, herança e polimorfismo
@@ -71,8 +57,44 @@ Implementação de operações bancárias simuladas
 
 Uso de cores no terminal para destacar informações
 
+## ▶️ Como executar o projeto
+```bash
+# Clone o repositório
+git clone https://github.com/gabrielmessias-dev/bancobahea.git
+
+# Entre na pasta do projeto
+cd bancobahea
+
+# Instale as dependências
+npm install
+
+# Execute o app
+npx ts-node Menu.ts
+```
+📸 Demonstração
+
+![Demonstração do Banco do Bahea](https://github.com/gabrielmessias-dev/banco-do-bahea/raw/main/demoapp.png)
+
+📚 Aprendizados
+
+Aplicação prática de POO com classes abstratas, herança e polimorfismo
+
+Organização em camadas (Model, Controller, Repository e Utils)
+
+Interação com o usuário via linha de comando
+
+Implementação de operações bancárias simuladas
+
+Uso de cores no terminal para destacar informações
+
 👨‍💻 Autor
+
 Gabriel Messias
 
+LinkedIn
+
 GitHub
+
+
+
 
