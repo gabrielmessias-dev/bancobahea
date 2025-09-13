@@ -39,10 +39,7 @@ src/
 │ └── colors.ts # Saída colorida no terminal
 │
 ├── Menu.ts # Menu principal
-└── ...
-
-yaml
-Copiar código
+└── tsconfig, package, package-lock (json)
 
 ---
 
