@@ -89,10 +89,6 @@ Uso de cores no terminal para destacar informações
 
 Gabriel Messias
 
-LinkedIn
-
-GitHub
-
 
 
 
