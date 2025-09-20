@@ -22,6 +22,7 @@ O projeto aplica conceitos de **Programação Orientada a Objetos (POO)** como *
 
 ---
 
+```
 ## 📂 Estrutura do Projeto
 
 src/
@@ -36,11 +37,7 @@ src/
 ├── repository/    # Manipulação de dados
 │   └── ContaRepository.ts
 │
-├── utils/         # Funções auxiliares
-│   └── colors.ts  # Saída colorida no terminal
-│
-├── Menu.ts        # Menu principal
-└── tsconfig.json, package.json, package-lock.json
+```
 
 
 ---
