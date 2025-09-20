@@ -23,23 +23,25 @@ O projeto aplica conceitos de **Programação Orientada a Objetos (POO)** como *
 ---
 
 ## 📂 Estrutura do Projeto
+
 src/
-├── models/ # Classes e abstrações
-│ ├── Conta.ts
-│ ├── ContaCorrente.ts
-│ └── ContaPoupanca.ts
+├── models/        # Classes e abstrações
+│   ├── Conta.ts
+│   ├── ContaCorrente.ts
+│   └── ContaPoupanca.ts
 │
-├── controller/ # Lógica de controle
-│ └── ContaController.ts
+├── controller/    # Lógica de controle
+│   └── ContaController.ts
 │
-├── repository/ # Manipulação de dados
-│ └── ContaRepository.ts
+├── repository/    # Manipulação de dados
+│   └── ContaRepository.ts
 │
-├── utils/ # Funções auxiliares
-│ └── colors.ts # Saída colorida no terminal
+├── utils/         # Funções auxiliares
+│   └── colors.ts  # Saída colorida no terminal
 │
-├── Menu.ts # Menu principal
-└── tsconfig, package, package-lock (json)
+├── Menu.ts        # Menu principal
+└── tsconfig.json, package.json, package-lock.json
+
 
 ---
 
